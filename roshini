@@ -13,7 +13,7 @@
       justify-content: center;
       align-items: center;
 
-      /* Event-themed background with gradient overlay */
+     
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                   url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&q=80')
                   no-repeat center center/cover;
@@ -68,7 +68,7 @@
       background-color: #218838;
     }
 
-    /* Floating decorative icons */
+    
     .floating {
       position: absolute;
       width: 40px;
@@ -89,7 +89,7 @@
       100% { transform: translateY(0) rotate(360deg); }
     }
 
-    /* Success Modal */
+    
     #success {
       position: fixed;
       top: 0; left: 0;
