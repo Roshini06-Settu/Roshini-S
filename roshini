@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* Event-themed background with gradient overlay */
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&q=80')
+                  no-repeat center center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      width: 350px;
+      z-index: 2;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #218838;
+    }
+
+    /* Floating decorative icons */
+    .floating {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+      animation: float 10s linear infinite;
+    }
+
+    .icon1 { background-image: url('https://cdn-icons-png.flaticon.com/512/452/452107.png'); top: 90%; left: 10%; animation-delay: 0s; }
+    .icon2 { background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png'); top: 95%; left: 50%; animation-delay: 2s; }
+    .icon3 { background-image: url('https://cdn-icons-png.flaticon.com/512/1040/1040222.png'); top: 90%; left: 80%; animation-delay: 4s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-400px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+
+    /* Success Modal */
+    #success {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      display: none;
+    }
+
+    #success:target {
+      display: block;
+    }
+
+    .modal-box {
+      background-color: white;
+      margin: 150px auto;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .close-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #dc3545;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      background: #c82333;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Event Icons -->
+<div class="floating icon1"></div>
+<div class="floating icon2"></div>
+<div class="floating icon3"></div>
+
+<div class="container">
+  <h2>Event Registration</h2>
+  <!-- Redirect to #success on submit -->
+  <form action="#success" method="get">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="event">Select Event</label>
+    <select id="event" name="event" required>
+      <option value="">--Choose--</option>
+      <option>Tech Talk</option>
+      <option>Workshop</option>
+      <option>Music Night</option>
+    </select>
+
+    <button type="submit" class="submit-btn">Register</button>
+  </form>
+</div>
+
+<!-- Success Modal -->
+<div id="success">
+  <div class="modal-box">
+    <h3>✅ Registration Successful!</h3>
+    <p>Thank you for registering.</p>
+    <a href="#" class="close-btn">Close</a>
+  </div>
+</div>
+
+</body>
+</html>
